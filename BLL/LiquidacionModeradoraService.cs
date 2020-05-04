@@ -179,7 +179,10 @@ namespace BLL
         }
 
 
-
+        public IList<LiquidacionModeradora> ConsultaPorNombre(string nombre)
+        {
+            return liquidacionesRepositorio.ConsultaPorNombre(nombre);
+        }
 
     }
 }

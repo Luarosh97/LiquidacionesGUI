@@ -100,27 +100,46 @@ namespace IpsLiquidacionesGUI
             {
                 DateTime fecha = DtConsultarfecha.Value.Date;
                 dataGridView1.DataSource = liquidacionService.ConsultarXFechaSubsidiadas(fecha);
-               TotalLiquidacionesSubsidiadas = liquidacionService.ConsultarXFechaSubsidiadas(fecha).Count().ToString();
+                TotalLiquidacionesSubsidiadas = liquidacionService.ConsultarXFechaSubsidiadas(fecha).Count().ToString();
                 TotalLiquidacionesinscritas = "0";
                 TotalLiquidacionesContributivas = "0";
-                TotalcuotasSubsidiadas = liquidacionService.ConsultarXFechaSubsidiadas(fecha).Sum(l=>l.CuotaModeradora).ToString();
+                TotalcuotasSubsidiadas = liquidacionService.ConsultarXFechaSubsidiadas(fecha).Sum(l => l.CuotaModeradora).ToString();
                 TotalCuotasGenerales = "0";
                 TotalcuotasContributivas = "0";
 
             }
 
-            else if (Tipo.Equals("ConsultarXfechacontributivas")) {
+            else if (Tipo.Equals("ConsultarXfechacontributivas"))
+            {
 
                 DateTime fecha = DtConsultarfecha.Value.Date;
                 dataGridView1.DataSource = liquidacionService.ConsultarXFechaContributivas(fecha);
-                TotalLiquidacionesContributivas= liquidacionService.ConsultarXFechaContributivas(fecha).Count().ToString();
+                TotalLiquidacionesContributivas = liquidacionService.ConsultarXFechaContributivas(fecha).Count().ToString();
                 TotalLiquidacionesinscritas = "0";
                 TotalLiquidacionesSubsidiadas = "0";
                 TotalcuotasContributivas = liquidacionService.ConsultarXFechaContributivas(fecha).Sum(l => l.CuotaModeradora).ToString();
                 TotalCuotasGenerales = "0";
                 TotalcuotasSubsidiadas = "0";
 
-                    }
+            }
+
+            else if (Tipo.Equals("ConsultaXNombre"))
+            {
+
+
+                dataGridView1.DataSource = liquidacionService.ConsultaPorNombre(ComparaNombretxt.Text);
+                TotalCuotasGenerales = "0";
+                TotalcuotasSubsidiadas = "0";
+                TotalLiquidacionesinscritas = "0";
+                TotalLiquidacionesSubsidiadas = "0";
+                TotalLiquidacionesContributivas = "0";
+                TotalcuotasContributivas = "0";
+
+
+
+
+
+            }
 
           LlenarCampos();
         }

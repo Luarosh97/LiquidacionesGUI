@@ -47,6 +47,8 @@
             this.DtConsultarfecha = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.ComparaNombretxt = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,7 +69,8 @@
             "Contributivas",
             "ConsultarXfecha",
             "ConsultarXfechasubsidiadas",
-            "ConsultarXfechacontributivas"});
+            "ConsultarXfechacontributivas",
+            "ConsultaXNombre"});
             this.TipoConsulta.Location = new System.Drawing.Point(371, 31);
             this.TipoConsulta.Name = "TipoConsulta";
             this.TipoConsulta.Size = new System.Drawing.Size(119, 21);
@@ -186,7 +189,7 @@
             // 
             this.button1.Image = global::IpsLiquidacionesGUI.Properties.Resources._4552611_check_listing_loupe_magnifier_magnifying_glass_search_121392;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(611, 12);
+            this.button1.Location = new System.Drawing.Point(692, 11);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 57);
             this.button1.TabIndex = 0;
@@ -197,7 +200,7 @@
             // 
             // DtConsultarfecha
             // 
-            this.DtConsultarfecha.Location = new System.Drawing.Point(108, 28);
+            this.DtConsultarfecha.Location = new System.Drawing.Point(138, 31);
             this.DtConsultarfecha.Name = "DtConsultarfecha";
             this.DtConsultarfecha.Size = new System.Drawing.Size(200, 20);
             this.DtConsultarfecha.TabIndex = 18;
@@ -220,11 +223,29 @@
             this.label7.TabIndex = 21;
             this.label7.Text = "Combo Liquidaciones";
             // 
+            // ComparaNombretxt
+            // 
+            this.ComparaNombretxt.Location = new System.Drawing.Point(543, 34);
+            this.ComparaNombretxt.Name = "ComparaNombretxt";
+            this.ComparaNombretxt.Size = new System.Drawing.Size(110, 20);
+            this.ComparaNombretxt.TabIndex = 22;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(556, 12);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(87, 13);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "Compara nombre";
+            // 
             // ConsultarLiquidacionGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(852, 515);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.ComparaNombretxt);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.DtConsultarfecha);
@@ -274,5 +295,7 @@
         private System.Windows.Forms.DateTimePicker DtConsultarfecha;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox ComparaNombretxt;
+        private System.Windows.Forms.Label label8;
     }
 }

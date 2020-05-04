@@ -189,6 +189,11 @@ namespace DAL
             return liquidacionesCuotas.Where(l => l.TipoAfiliacion == "contributiva").Where(l => l.Fecha.Year.Equals(fecha.Year) && l.Fecha.Month.Equals(fecha.Month)).ToList();
 
         }
+
+        public IList<LiquidacionModeradora> ConsultaPorNombre(string nombre)
+        {
+            return liquidacionesCuotas.Where(l => l.Nombrepaciente.Contains(nombre)).ToList();
+        }
        
 } 
 }
