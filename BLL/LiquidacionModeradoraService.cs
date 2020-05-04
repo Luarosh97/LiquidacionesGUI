@@ -24,7 +24,7 @@ namespace BLL
                 if (liquidacionesRepositorio.Buscar(liquidacionmoderadora.NumeroDeLiquidacion) == null)
                 {
                     liquidacionesRepositorio.Guardar(liquidacionmoderadora);
-                    return $"Los datos de la cuenta numero {liquidacionmoderadora.NumeroDeLiquidacion} han sido guardados correctamente";
+                    return $"Los datos de la liquidacion numero {liquidacionmoderadora.NumeroDeLiquidacion} han sido guardados correctamente";
                 }
                 return $"No es posible registrar la cuenta con numero {liquidacionmoderadora.NumeroDeLiquidacion}, porque ya se encuentra registrada";
             }
@@ -80,7 +80,7 @@ namespace BLL
                 IList<LiquidacionModeradora> liquidacionescuotas = liquidacionesRepositorio.Consultar();
                 if (liquidacionescuotas.Count != 0)
                 {
-                    respuesta.Mensaje = "Se Consulta la Informacion de personas";
+                    respuesta.Mensaje = "Se Consulta la Informacion de liquidaciones";
                     respuesta.liquidacionesCuotas= liquidacionescuotas;
                 }
                 else
@@ -114,7 +114,7 @@ namespace BLL
                 else
                 {
                     respuesta.liquidacionmoderadora =Liquidacionmoderadora;
-                    respuesta.Mensaje = "Persona encontrada\n\n";
+                    respuesta.Mensaje = "liquidacion encontrada\n\n";
                 }
             }
             catch (Exception E)

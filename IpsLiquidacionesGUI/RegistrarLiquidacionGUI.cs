@@ -106,13 +106,13 @@ namespace IpsLiquidacionesGUI
                 }
                 else
                 {
-                    MessageBox.Show($"La persona con la identificación {numeroloquidacion} no se encuentra registrada");
+                    MessageBox.Show($"La liquidacion con el numero  {numeroloquidacion} no se encuentra registrada");
                 }
 
             }
             else
             {
-                MessageBox.Show("digite una identificacion a buscar");
+                MessageBox.Show("digite un numero de liquidacion a buscar");
             }
         }
 
@@ -130,7 +130,7 @@ namespace IpsLiquidacionesGUI
                 }
                 else
                 {
-                    MessageBox.Show($"La persona con la identificación {numeroliquidacion} no se encuentra registrada");
+                    MessageBox.Show($"La liquidacion con numero {numeroliquidacion} no se encuentra registrada");
                 }
 
 
