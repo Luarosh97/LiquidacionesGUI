@@ -87,7 +87,8 @@ namespace IpsLiquidacionesGUI
 
                 DateTime fecha = DtConsultarfecha.Value.Date;
                 dataGridView1.DataSource = liquidacionService.ConsultarXFecha(fecha);
-                TotalCuotasGenerales = liquidacionService.SumarCuotas().ToString();
+                TotalCuotasGenerales = liquidacionService.ConsultarXFecha(fecha).Sum(l => l.CuotaModeradora).ToString();
+                TotalLiquidacionesinscritas = liquidacionService.ConsultarXFecha(fecha).Count().ToString();
                 TotalLiquidacionesSubsidiadas = "0";
                 TotalLiquidacionesContributivas = "0";
                 TotalcuotasSubsidiadas = "0";
@@ -99,9 +100,10 @@ namespace IpsLiquidacionesGUI
             {
                 DateTime fecha = DtConsultarfecha.Value.Date;
                 dataGridView1.DataSource = liquidacionService.ConsultarXFechaSubsidiadas(fecha);
-                TotalLiquidacionesinscritas = TotalLiquidacionesSubsidiadas;
+               TotalLiquidacionesSubsidiadas = liquidacionService.ConsultarXFechaSubsidiadas(fecha).Count().ToString();
+                TotalLiquidacionesinscritas = "0";
                 TotalLiquidacionesContributivas = "0";
-                TotalcuotasSubsidiadas = liquidacionService.SumarCuotasSubsidiadas().ToString();
+                TotalcuotasSubsidiadas = liquidacionService.ConsultarXFechaSubsidiadas(fecha).Sum(l=>l.CuotaModeradora).ToString();
                 TotalCuotasGenerales = "0";
                 TotalcuotasContributivas = "0";
 
@@ -111,9 +113,10 @@ namespace IpsLiquidacionesGUI
 
                 DateTime fecha = DtConsultarfecha.Value.Date;
                 dataGridView1.DataSource = liquidacionService.ConsultarXFechaContributivas(fecha);
-                TotalLiquidacionesinscritas = TotalLiquidacionesContributivas;
+                TotalLiquidacionesContributivas= liquidacionService.ConsultarXFechaContributivas(fecha).Count().ToString();
+                TotalLiquidacionesinscritas = "0";
                 TotalLiquidacionesSubsidiadas = "0";
-                TotalcuotasContributivas = liquidacionService.SumarCuotasContributivas().ToString();
+                TotalcuotasContributivas = liquidacionService.ConsultarXFechaContributivas(fecha).Sum(l => l.CuotaModeradora).ToString();
                 TotalCuotasGenerales = "0";
                 TotalcuotasSubsidiadas = "0";
 
